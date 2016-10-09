@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Software Prototyping</title>
+        <link type="text/css" rel="stylesheet" media="all" href="/static/styles/prototyping.css" />
+        <link type="text/css" rel="stylesheet" media="all" href="/static/styles/prototyping_color.css" /> 
+        <script type="text/javascript" src="/static/js/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/validation.js"></script>
+        <script language="javascript" type="text/javascript">
+            function process() {
+				document.getElementById("data").innerHTML="<h1 align='center'>Data Training and Test</h1><br><br><br><br><div style='text-align:center; margin:0px auto;'><img style='margin:0px auto;' src='/static/images/processing.gif'></img></div>";
+                                document.getElementById("showData").disabled="false";
+				document.getElementById("train").disabled="false";
+				if($("#data").remoteTrainingAndTest("../trainingAndTest")) {
+                                    location.href = "../testResult";
+                                } else {
+                                    alert("error");
+                                    location.href = "../main";
+                                }
+                                
+                                //location.href = '../trainingAndTest';
+			}
+                
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <img src="/static/images/logo.jpg" alt="logo" class="left"/>
+            <span style="font-size:40px;font-weight: bold">Neural Network</span>            
+        </div>
+        <div id="navi">                        
+            <ul id="menu">
+                <li><a href="#" class="navi_space"></a></li>
+                <li><a href="#" class="navi_dataProcessing" style="width: 136px;"></a></li>   
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_trainingTest" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_prediction" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_space"></a></li>
+            </ul>            
+        </div>
+        <div id="main">
+			<div id="data">
+				<div>
+					<h1 align="center">Data Processing</h1><br /><br /><br />
+					<h2 id="h2" style="font-weight: bold">Deleted Data List Below：</h2>
+					<table id="datalist">
+                    				<tr>
+                        				<th>Number of Times Pregnant</th>
+                        				<th>Plasma Glucose Concentration</th>
+                        				<th >Diastolic Blood Pressure</th>
+                        				<th>Triceps Skin Fold Thickness</th>
+                        				<th class="width100">2-Hour Serum Insulin</th>
+                        				<th>Body Mass Index</th>
+                        				<th class="width140">Pedigree Function</th>                                                        
+                        				<th class="width50">Age</th>
+							<th>Target Cluster</th>
+                    				</tr>
+                                                {% for data in dataProcessed %}
+                    					<tr>
+                        					<td>{{data.0}}</td>
+                        					<td>{{data.1}}</td>
+                        					<td>{{data.2}}</td>
+                        					<td>{{data.3}}</td>
+                        					<td>{{data.4}}</td>
+                        					<td>{{data.5}}</td>
+                        					<td>{{data.6}}</td>                            
+                        					<td>{{data.7}}</td>
+								<td>{{data.8}}</td>
+                    					</tr> 
+                                                {% endfor %}              
+                			</table>
+					
+					<br /><br />
+				</div>
+			</div>
+			<div id="pages">
+                <input id="showData" type="button" style="align: center;" value=" Show Processed Data " onclick="location.href='../showDataProcessed';" />
+                <input id="train" type="button" style="align: center;" value=" Training and Test " onclick="process();" />
+            </div>     
+        </div>
+        <div id="footer">
+            <p>[copyright(C)]</p>
+            <p>Xu Lei, Xu Xiao, Shao Xi, Software Prototyping, SE22, ISS, NUS </p>
+        </div>
+    </body>
+</html>

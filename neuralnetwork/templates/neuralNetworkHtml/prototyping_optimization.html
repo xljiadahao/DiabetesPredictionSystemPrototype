@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Software Prototyping</title>
+        <link type="text/css" rel="stylesheet" media="all" href="../styles/prototyping.css" />
+        <link type="text/css" rel="stylesheet" media="all" href="../styles/prototyping_color.css" /> 
+        <script language="javascript" type="text/javascript">
+            function process() {
+				document.getElementById("startButton").disabled="false";
+				document.getElementById("data").innerHTML="<div style='text-align:center; margin:0px auto;'><img style='margin:0px auto;' src='../images/processing.gif'></img></div>";
+			}
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <img src="../images/logo.jpg" alt="logo" class="left"/>
+            <span style="font-size:40px;font-weight: bold">Neural Network</span>            
+        </div>
+        <div id="navi">                        
+            <ul id="menu">
+                <li><a href="#" class="navi_space"></a></li>
+                <li><a href="#" class="navi_training" style="width: 136px;"></a></li>   
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_optimization" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_prediction" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_space"></a></li>
+            </ul>            
+        </div>
+        <div id="main">
+			<div id="data">
+				<div>
+					<h1 align="center">Optimization</h1><br /><br /><br />
+					<h2 style="font-weight: bold">Choosing the test data to test the neural networks which are trained already, then we can get the best neural network for the situation;</h2><br /><br />
+					<h2 style="font-weight: bold">The test data can be chosen, but the data format must be based on the related CSV file.</h2><br /><br />
+				</div>
+			</div>
+			<div id="pages">
+                <input id="chooseFile" type="file" style="align: center;"/>
+				<input id="test" type="button" style="align: center;" value="Test for all Neural Networks " onclick="" />
+            </div>     
+        </div>
+        <div id="footer">
+            <p>[copyright(C)]</p>
+            <p>Xu Lei, Xu Xiao, Shao Xi, Software Prototyping, SE22, ISS, NUS </p>
+        </div>
+    </body>
+</html>

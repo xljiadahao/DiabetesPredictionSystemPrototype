@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Software Prototyping</title>
+        <link type="text/css" rel="stylesheet" media="all" href="../styles/prototyping.css" />
+        <link type="text/css" rel="stylesheet" media="all" href="../styles/prototyping_color.css" /> 
+        <script language="javascript" type="text/javascript">
+            function process() {
+				document.getElementById("showData").disabled="false";
+				document.getElementById("train").disabled="false";
+				document.getElementById("data").innerHTML="<div style='text-align:center; margin:0px auto;'><img style='margin:0px auto;' src='../images/processing.gif'></img></div>";
+			}
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <img src="../images/logo.jpg" alt="logo" class="left"/>
+            <span style="font-size:40px;font-weight: bold">Neural Network</span>            
+        </div>
+        <div id="navi">                        
+            <ul id="menu">
+                <li><a href="#" class="navi_space"></a></li>
+                <li><a href="#" class="navi_training" style="width: 136px;"></a></li>   
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_optimization" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_prediction" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_space"></a></li>
+            </ul>            
+        </div>
+        <div id="main">
+			<div id="data">
+				 <h1 align="center">Training</h1><br />
+				 <table id="datalist"> 
+					<tr>
+                        <th>Pregnant times</th>
+                        <th>Plasma glucose concentration</th>
+                        <th>Diastolic blood pressure</th>
+                        <th>Triceps skin fold thickness</th>
+                        <th>Serum insulin</th>
+                        <th>Body mass index</th>
+                        <th>Diabetes pedigree function</th>                                                        
+                        <th class="width50">Age</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>85</td>
+                        <td>66</td>
+                        <td>29</td>
+                        <td>0</td>
+                        <td>26.6</td>
+                        <td>0.351</td>                            
+                        <td>31</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>183</td>
+                        <td>64</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>23.3</td>
+                        <td>0.672</td>                            
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>89</td>
+                        <td>66</td>
+                        <td>23</td>
+                        <td>94</td>
+                        <td>28.1</td>
+                        <td>0.167</td>                            
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>137</td>
+                        <td>40</td>
+                        <td>35</td>
+                        <td>168</td>
+                        <td>43.1</td>
+                        <td>2.288</td>                            
+                        <td>33</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>116</td>
+                        <td>74</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>25.6</td>
+                        <td>0.201</td>                            
+                        <td>30</td>
+                    </tr>
+					<tr>
+                        <td>5</td>
+                        <td>116</td>
+                        <td>74</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>25.6</td>
+                        <td>0.201</td>                            
+                        <td>30</td>
+                    </tr>
+					<tr>
+                        <td>5</td>
+                        <td>116</td>
+                        <td>74</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>25.6</td>
+                        <td>0.201</td>                            
+                        <td>30</td>
+                    </tr>
+					<tr>
+                        <td>5</td>
+                        <td>116</td>
+                        <td>74</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>25.6</td>
+                        <td>0.201</td>                            
+                        <td>30</td>
+                    </tr>
+					<tr>
+                        <td>5</td>
+                        <td>116</td>
+                        <td>74</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>25.6</td>
+                        <td>0.201</td>                            
+                        <td>30</td>
+                    </tr>
+					<tr>
+                        <td>5</td>
+                        <td>116</td>
+                        <td>74</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>25.6</td>
+                        <td>0.201</td>                            
+                        <td>30</td>
+                    </tr>
+					<tr>
+                        <td>5</td>
+                        <td>116</td>
+                        <td>74</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>25.6</td>
+                        <td>0.201</td>                            
+                        <td>30</td>
+                    </tr>
+					<tr>
+                        <td>5</td>
+                        <td>116</td>
+                        <td>74</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>25.6</td>
+                        <td>0.201</td>                            
+                        <td>30</td>
+                    </tr>
+					<tr>
+                        <td>5</td>
+                        <td>116</td>
+                        <td>74</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>25.6</td>
+                        <td>0.201</td>                            
+                        <td>30</td>
+                    </tr>
+					<tr>
+                        <td>5</td>
+                        <td>116</td>
+                        <td>74</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>25.6</td>
+                        <td>0.201</td>                            
+                        <td>30</td>
+                    </tr>
+                </table>
+			</div>
+			<div id="pages">
+                <input id="showData" type="button" style="align: center;" value=" Show the Training Data " onclick="" />
+				<input id="train" type="button" style="align: center;" value="Train the Neural Networks " onclick="process();" />
+            </div>     
+        </div>
+        <div id="footer">
+            <p>[copyright(C)]</p>
+            <p>Xu Lei, Xu Xiao, Shao Xi, Software Prototyping, SE22, ISS, NUS </p>
+        </div>
+    </body>
+</html>

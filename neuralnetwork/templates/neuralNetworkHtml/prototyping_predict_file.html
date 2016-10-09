@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Software Prototyping</title>
+        <link type="text/css" rel="stylesheet" media="all" href="/static/styles/prototyping.css" />
+        <link type="text/css" rel="stylesheet" media="all" href="/static/styles/prototyping_color.css" />
+	<script type="text/javascript" src="/static/js/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/validation.js"></script>
+        <script language="javascript" type="text/javascript">
+            $(function(){
+		$("#predict").click(function(){  
+		    $("#predictForm").submit();
+		});
+	    });
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <img src="/static/images/logo.jpg" alt="logo" class="left"/>
+            <span style="font-size:40px;font-weight: bold">Neural Network</span>            
+        </div>
+        <div id="navi">
+            <ul id="menu">
+                <li><a href="#" class="navi_space"></a></li>
+                <li><a href="#" class="navi_dataProcessing" style="width: 136px;"></a></li>   
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_trainingTest" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_prediction" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_space"></a></li>
+            </ul>
+        </div>
+        <div id="main">
+	    <h1 align="center">Prediction</h1><br />
+            <form id="predictForm" enctype="multipart/form-data" action="../uploadFile/" method="post" class="main_form">
+                {% csrf_token %}
+                <input type="file" name="file"> 
+                <div class="button_info clearfix">
+		    <input type="button" value="Back" class="btn_save" onclick=""/>
+                    <input id="predict" type="button" value="Upload" class="btn_save" onclick=""/>
+                </div>
+            </form>
+        </div>
+        <div id="footer">
+            <p>[copyright(C)]</p>
+            <p>Xu Lei, Xu Xiao, Shao Xi, Software Prototyping, SE22, ISS, NUS </p>
+        </div>
+    </body>
+</html>

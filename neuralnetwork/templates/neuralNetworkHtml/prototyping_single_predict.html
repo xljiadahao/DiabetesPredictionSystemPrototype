@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Software Prototyping</title>
+        <link type="text/css" rel="stylesheet" media="all" href="/static/styles/prototyping.css" />
+        <link type="text/css" rel="stylesheet" media="all" href="/static/styles/prototyping_color.css" />
+	<script type="text/javascript" src="/static/js/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/validation.js"></script>
+        <script language="javascript" type="text/javascript">
+           function validateServiceForm() {
+                var b1 =  $("#pregnantTimes").validateInteger("Be an integer. ",$("#msgPregnantTimes"));
+                var b2 = $("#plasmaGlucoseConcentration").validateInteger("Be an integer. ",$("#msgPlasmaGlucoseConcentration")); 
+		var b3 = $("#diastolicBloodPressure").validateInteger("Be an integer. ",$("#msgDiastolicBloodPressure"));
+		var b4 = $("#tricepsSkinFoldThickness").validatePositiveNum("Be a positive number. ",$("#msgTricepsSkinFoldThickness"));
+		var b5 = $("#serumInsulin").validatePositiveNum("Be a positive number. ",$("#msgSerumInsulin"));
+		var b6 = $("#bodyMassIndex").validatePositiveNum("Be a positive number. ",$("#msgBodyMassIndex"));
+		var b7 = $("#diabetesPedigreeFunction").validatePositiveNum("Be a positive number. ",$("#msgDiabetesPedigreeFunction"));
+		var b8 = $("#age").validateInteger("Be an integer. ",$("#msgAge"));			  
+		      
+		//alert(b1+","+b2+","+b3+","+b4+","+b5+","+b6+","+b7+","+b8);
+		return b1 && b2 && b3 && b4 && b5 && b6 && b7 && b8; 
+            }
+            $(function(){
+		$("#predict").click(function(){
+		    var b = validateServiceForm();
+		    if(b) {
+		        $("#predictForm").submit();
+		    }
+		});
+	    });
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <img src="/static/images/logo.jpg" alt="logo" class="left"/>
+            <span style="font-size:40px;font-weight: bold">Neural Network</span>            
+        </div>
+        <div id="navi">
+            <ul id="menu">
+                <li><a href="#" class="navi_space"></a></li>
+                <li><a href="#" class="navi_dataProcessing" style="width: 136px;"></a></li>   
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_trainingTest" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_prediction" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_space"></a></li>
+            </ul>
+        </div>
+        <div id="main">
+	    <h1 align="center">Prediction</h1><br />
+            <form id="predictForm" action="../predictionSingleResult/" method="post" class="main_form">
+                <div class="text_info clearfix"><span>Name: </span></div>
+                <div class="input_info">
+                    <input id="name" name="name" type="text" value="" class="width160" />
+                </div>
+		<div class="text_info clearfix"><span>Pregnant times: </span></div>
+                <div class="input_info">
+                    <input id="pregnantTimes" name="pregnantTimes" type="text" value="" class="width160" />
+                    <span class="required">*</span>
+                    <span id="msgPregnantTimes" class="validate_msg_short" style="color:red;"></span>
+                </div>
+                <div class="text_info clearfix"><span>Plasma glucose concentration: </span></div>
+                <div class="input_info">
+                    <input id="plasmaGlucoseConcentration" name="plasmaGlucoseConcentration" type="text" value="" class="width160" />
+                    <span class="required">*</span>
+		    <span class="validate_msg_long" style="color:black;">(2 hours in oral glucose tolerance test) </span>
+                    <span id="msgPlasmaGlucoseConcentration" class="validate_msg_long" style="color:red;"></span>
+                </div> 
+                <div class="text_info clearfix"><span>Diastolic blood pressure: </span></div>
+                <div class="input_info">
+                    <input id="diastolicBloodPressure" name="diastolicBloodPressure" type="text" value="" class="width160" />
+                    <span class="required">*</span>
+		    <span class="validate_msg_long" style="color:black;">(mm Hg) </span>
+                    <span id="msgDiastolicBloodPressure" class="validate_msg_long" style="color:red;"></span>
+                </div>                   
+                <div class="text_info clearfix"><span>Triceps skin fold thickness: </span></div>
+                <div class="input_info">
+                    <input id="tricepsSkinFoldThickness" name="tricepsSkinFoldThickness" type="text" value="" class="width160" />
+                    <span class="required">*</span>
+		    <span class="validate_msg_long" style="color:black;">(mm) </span>
+                    <span id="msgTricepsSkinFoldThickness" class="validate_msg_long" style="color:red;"></span>
+                </div>
+                <div class="text_info clearfix"><span>Serum insulin: </span></div>
+                <div class="input_info">
+                    <input id="serumInsulin" name="serumInsulin" type="text" value="" class="width160" />
+                    <span class="required">*</span>
+		    <span class="validate_msg_long" style="color:black;">(2-Hour serum insulin, mu U/ml) </span>
+                    <span id="msgSerumInsulin" class="validate_msg_long" style="color:red;"></span>
+                </div>
+                <div class="text_info clearfix"><span>Body mass index: </span></div>
+                <div class="input_info">
+                    <input id="bodyMassIndex" name="bodyMassIndex" type="text" value="" class="width160" />
+                    <span class="required">*</span>
+		    <span class="validate_msg_long" style="color:black;">(weight in kg/(height in m)^2) </span>
+                    <span id="msgBodyMassIndex" class="validate_msg_long" style="color:red;"></span>
+                </div>  
+		<div class="text_info clearfix"><span>Diabetes pedigree function: </span></div>
+                <div class="input_info">
+                    <input id="diabetesPedigreeFunction" name="diabetesPedigreeFunction" type="text" value="" class="width160" />
+                    <span class="required">*</span>
+                    <span id="msgDiabetesPedigreeFunction" class="validate_msg_long" style="color:red;"></span>
+                </div>
+		<div class="text_info clearfix"><span>Age: </span></div>
+                <div class="input_info">
+                    <input id="age" name="age" type="text" value="" class="width160" />
+                    <span class="required">*</span>
+                    <span id="msgAge" class="validate_msg_long" style="color:red;"></span>
+                </div> 
+                <div class="button_info clearfix">
+		    <input type="button" value="Back" class="btn_save" onclick="javascript:history.go(-1);"/>
+                    <input id="predict" type="button" value="Predict" class="btn_save" onclick=""/>
+                </div>
+            </form>
+        </div>
+        <div id="footer">
+            <p>[copyright(C)]</p>
+            <p>Xu Lei, Xu Xiao, Shao Xi, Software Prototyping, SE22, ISS, NUS </p>
+        </div>
+    </body>
+</html>

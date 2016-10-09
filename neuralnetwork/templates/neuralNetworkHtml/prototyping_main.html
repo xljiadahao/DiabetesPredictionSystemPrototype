@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Software Prototyping</title>
+        <link type="text/css" rel="stylesheet" media="all" href="/static/styles/prototyping.css" />
+        <link type="text/css" rel="stylesheet" media="all" href="/static/styles/prototyping_color.css" /> 
+        <script language="javascript" type="text/javascript">
+            function process() {
+				document.getElementById("startButton").disabled="false";
+				document.getElementById("data").innerHTML="<div style='text-align:center; margin:0px auto;'><img style='margin:0px auto;' src='../images/processing.gif'></img></div>";
+			}
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <img src="/static/images/logo.jpg" alt="logo" class="left"/>
+            <span style="font-size:40px;font-weight: bold">Neural Network</span>            
+        </div>
+        <div id="navi">                        
+            <ul id="menu">
+                <li><a href="#" class="navi_space"></a></li>
+                <li><a href="#" class="navi_dataProcessing" style="width: 136px;"></a></li>   
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_trainingTest" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_prediction" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_space"></a></li>
+            </ul>            
+        </div>
+        <div id="main">
+			<div id="data">
+				<div>
+					<h1 align="center">Software Prototyping -- Neural Network for Diabetes Prediction</h1><br />
+					<h2 style="font-weight: bold">Description：</h2><br />
+					1st Step, we can do the data processing for getting a better neural network model;<br />
+					2nd Step, we can use the exist training data to train the neural networks MLFF_BP, SVM, and test the neural networks which are trained already, then we can get the best neural network for the situation;<br />
+					3rd Step, we can use the better neural network for the situation to predict diabetes for the person who give the related parameters.<br /><br />
+					<h2 style="font-weight: bold">Notice：</h2><br />
+					1. The raw data is there and cannot change; algorithm of data processing is mostly based on the Box Plot and the domain knowledge;<br />                
+					2. The training data and the test data will be uploaded together with the CSV file and 75% for trainning, 25% for test;<br />
+					3. We can do the prediction with two options one instance or a group of instances; for the group one, we just need upload the related CSV file, and for the single one, we need gather the 8 parameters which are number of times pregnant, plasma glucose concentration a 2 hours in an oral glucose tolerance test, diastolic blood pressure (mm Hg), triceps skin fold thickness (mm), 2-hour serum insulin (mu U/ml), body mass index (weight in kg/(height in m)^2), diabetes pedigree function, age (years). 
+				</div>
+			</div>
+			<div id="pages">
+                <input id="startButton" type="button" style="align: center;" value="Start the Magic Journey " onclick="location.href='../dataProcessing';" />
+            </div>     
+        </div>
+        <div id="footer">
+            <p>[copyright(C)]</p>
+            <p>Xu Lei, Xu Xiao, Shao Xi, Software Prototyping, SE22, ISS, NUS </p>
+        </div>
+    </body>
+</html>

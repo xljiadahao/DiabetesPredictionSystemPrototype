@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Software Prototyping</title>
+        <link type="text/css" rel="stylesheet" media="all" href="/static/styles/prototyping.css" />
+        <link type="text/css" rel="stylesheet" media="all" href="/static/styles/prototyping_color.css" /> 
+        <script language="javascript" type="text/javascript">
+            function process() {
+				document.getElementById("showData").disabled="false";
+				document.getElementById("train").disabled="false";
+				document.getElementById("data").innerHTML="<div style='text-align:center; margin:0px auto;'><img style='margin:0px auto;' src='/static/images/processing.gif'></img></div>";
+			}
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <img src="/static/images/logo.jpg" alt="logo" class="left"/>
+            <span style="font-size:40px;font-weight: bold">Neural Network</span>            
+        </div>
+        <div id="navi">                        
+            <ul id="menu">
+                <li><a href="#" class="navi_space"></a></li>
+                <li><a href="#" class="navi_dataProcessing" style="width: 136px;"></a></li>   
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_trainingTest" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_prediction" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_space"></a></li>
+            </ul>            
+        </div>
+        <div id="main">
+			<div id="data">
+				<div>
+					<h1 align="center">Prediction</h1><br />
+					<h2>Neural Network: {{ model }}, Reliable Rate: {{ rate }}</h2>
+					<table id="datalist">
+                    				<tr>
+                        				<th>Number of Times Pregnant</th>
+                        				<th>Plasma Glucose Concentration</th>
+                        				<th >Diastolic Blood Pressure</th>
+                        				<th>Triceps Skin Fold Thickness</th>
+                        				<th class="width100">2-Hour Serum Insulin</th>
+                        				<th>Body Mass Index</th>
+                        				<th class="width140">Pedigree Function</th>                                                        
+                        				<th class="width50">Age</th>
+							<th>Predict Output</th>
+                    				</tr>
+                                                {% for data in rawData %}
+                    					<tr>
+                        					<td>{{data.0}}</td>
+                        					<td>{{data.1}}</td>
+                        					<td>{{data.2}}</td>
+                        					<td>{{data.3}}</td>
+                        					<td>{{data.4}}</td>
+                        					<td>{{data.5}}</td>
+                        					<td>{{data.6}}</td>
+                        					<td>{{data.7}}</td>
+								<td style="color: red;">{{data.8}}</td>
+                    					</tr> 
+                                                {% endfor %}              
+                			</table>
+					
+					<br /><br />
+				</div>
+			</div>
+			<div id="pages">
+                <input type="button" style="align: center;" value=" Predict by Current Model " onclick="location.href='../prediction';" />
+                <input type="button" style="align: center;" value="  Back to the Main Page  " onclick="location.href='../main';" />
+            </div>     
+        </div>
+        <div id="footer">
+            <p>[copyright(C)]</p>
+            <p>Xu Lei, Xu Xiao, Shao Xi, Software Prototyping, SE22, ISS, NUS </p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Software Prototyping</title>
+        <link type="text/css" rel="stylesheet" media="all" href="/static/styles/prototyping.css" />
+        <link type="text/css" rel="stylesheet" media="all" href="/static/styles/prototyping_color.css" /> 
+        <script language="javascript" type="text/javascript">
+            function process() {
+				document.getElementById("showData").disabled="false";
+				document.getElementById("train").disabled="false";
+				document.getElementById("data").innerHTML="<div style='text-align:center; margin:0px auto;'><img style='margin:0px auto;' src='/static/images/processing.gif'></img></div>";
+			}
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <img src="/static/images/logo.jpg" alt="logo" class="left"/>
+            <span style="font-size:40px;font-weight: bold">Neural Network</span>            
+        </div>
+        <div id="navi">                        
+            <ul id="menu">
+                <li><a href="#" class="navi_space"></a></li>
+                <li><a href="#" class="navi_dataProcessing" style="width: 136px;"></a></li>   
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_trainingTest" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_arrow"></a></li>
+                <li><a href="#" class="navi_prediction" style="width: 136px;"></a></li>
+                <li><a href="#" class="navi_space"></a></li>
+            </ul>            
+        </div>
+        <div id="main">
+			<div id="data">
+				<div>
+					<h1 align="center">Data Processing</h1><br /><br /><br />
+					<h2 style="font-weight: bold">Algorithm: 1. mostly based on the box plot to remove the outliers; 2. use statistical mean values replace the 0 values which not gathered.</h2><br /><br />
+					<h2 style="font-weight: bold">
+						<img src="/static/images/x1_boxplot_bef_beta.jpg"/>
+						<img src="/static/images/x4_boxplot_bef_beta.jpg"/>
+					</h2><br /><br />
+				</div>
+			</div>
+			<div id="pages">
+                <input id="showData" type="button" style="align: center;" value=" Show the Raw Data " onclick="location.href='../showRawData';" />
+		<input id="train" type="button" style="align: center;" value="Data Processing " onclick="location.href='../process';" />
+            </div>     
+        </div>
+        <div id="footer">
+            <p>[copyright(C)]</p>
+            <p>Xu Lei, Xu Xiao, Shao Xi, Software Prototyping, SE22, ISS, NUS </p>
+        </div>
+    </body>
+</html>
